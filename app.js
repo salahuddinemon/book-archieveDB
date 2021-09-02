@@ -5,7 +5,7 @@ const loadOpenLibrary = () => {
     ////clear search input
     searchField.value = '';
     // data fetch
-    fetch(`http://openlibrary.org/search.json?q=${searchText}`)
+    fetch(`https://openlibrary.org/search.json?q=${searchText}`)
         .then(res => res.json())
         .then(data => displayOpenLibrary(data.docs))
 };
@@ -18,7 +18,7 @@ const displayOpenLibrary = docs => {
     searchResult.textContent = '';
     // data catching
     docs.forEach(doc => {
-        const coverUrl = `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`
+        const coverUrl = `https://covers.openlibrary.org/b/id/${doc.cover_i}-M.jpg`
         console.log(coverUrl)
         // console.log(doc.author_name['0']);
         const div = document.createElement('div');
@@ -26,14 +26,13 @@ const displayOpenLibrary = docs => {
         <div class="card h-100">
             <img src="${coverUrl}" class="card-img-top" alt="...">
             <div class="card-body">
-            <h4 class="card-text">${doc.title}</h4>
-            <h6 class="card-title">${doc.author_name}</h6>
-                <p class="card-text">${doc.first_publish_year}</p>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                additional content. This content is a little bit longer.</p>
+                <h4 class="card-text">Books Name: ${doc.title} ${doc.text.length[4]}</h4>
+                <h6 class="card-title">Author Name: ${doc.author_name}</h6>
+                <p class="card-text">First Publish: ${doc.first_publish_year}</p>
+                <p class="card-text">Publisher: ${doc.publisher}</p>
              </div >
     <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted"></small>
     </div>
     </div >
     `
