@@ -1,4 +1,4 @@
-//call sms handling & style 
+//error handling variable
 const emptyError = document.getElementById('empty-value');
 // Load Data from API
 const loadOpenLibrary = () => {
