@@ -47,10 +47,7 @@ const displayOpenLibrary = data => {
                 <p class="card-text">First Publish: ${dataDoc.first_publish_year}</p>
                 <p class="card-text">Publisher: ${dataDoc.publisher}</p>
              </div >
-    <div class="card-footer">
-        <small class="text-muted"></small>
-    </div>
-    </div >
+        </div >
     `
         searchResult.appendChild(div);
     });
